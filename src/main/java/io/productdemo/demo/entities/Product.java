@@ -32,7 +32,7 @@ public class Product implements Serializable {
 	private String imgUrl;
 	
 	// Usando Set(representa conjunto) para garantir que não tenha produto com mais de uma categoria.
-	// Estaciado para garantir que a colegação não comece nula.
+	// Estanciado para garantir que a coleção não comece nula.
 	
 	@ManyToMany
 	@JoinTable(name = "tb_product_category",
