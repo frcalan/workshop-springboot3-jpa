@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.Category;
-import io.productdemo.demo.entities.User;
-import io.productdemo.demo.repositores.CategoryRepository;
+import io.productdemo.demo.seervices.repositores.CategoryRepository;
 
 @Service
 public class CategoryService {

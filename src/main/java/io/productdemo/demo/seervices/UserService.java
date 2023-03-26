@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.User;
-import io.productdemo.demo.repositores.UserRepository;
+import io.productdemo.demo.seervices.repositores.UserRepository;
 
 @Service
 public class UserService {
@@ -23,5 +23,7 @@ public class UserService {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
 	}
-
+	public User insert(User user) {
+		return repository.save(user);
+	}
 }

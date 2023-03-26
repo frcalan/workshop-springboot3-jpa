@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import io.productdemo.demo.entities.enums.OrderStatus;
-import io.productdemo.demo.repositores.CategoryRepository;
-import io.productdemo.demo.repositores.OrderItemRepository;
-import io.productdemo.demo.repositores.OrderRepository;
-import io.productdemo.demo.repositores.ProductRepository;
-import io.productdemo.demo.repositores.UserRepository;
+import io.productdemo.demo.seervices.repositores.CategoryRepository;
+import io.productdemo.demo.seervices.repositores.OrderItemRepository;
+import io.productdemo.demo.seervices.repositores.OrderRepository;
+import io.productdemo.demo.seervices.repositores.ProductRepository;
+import io.productdemo.demo.seervices.repositores.UserRepository;
 
 @Configuration
 @Profile("test")
