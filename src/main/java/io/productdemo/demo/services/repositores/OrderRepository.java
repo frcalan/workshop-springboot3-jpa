@@ -1,4 +1,4 @@
-package io.productdemo.demo.seervices.repositores;
+package io.productdemo.demo.services.repositores;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

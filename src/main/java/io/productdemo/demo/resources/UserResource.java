@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import io.productdemo.demo.entities.User;
-import io.productdemo.demo.seervices.UserService;
+import io.productdemo.demo.services.UserService;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController

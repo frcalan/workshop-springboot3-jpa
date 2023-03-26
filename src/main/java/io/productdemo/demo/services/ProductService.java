@@ -1,4 +1,4 @@
-package io.productdemo.demo.seervices;
+package io.productdemo.demo.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.Product;
-import io.productdemo.demo.seervices.repositores.ProductRepository;
+import io.productdemo.demo.services.repositores.ProductRepository;
 
 @Service
 public class ProductService {

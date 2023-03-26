@@ -1,13 +1,14 @@
-package io.productdemo.demo.seervices;
+package io.productdemo.demo.services;
 
 import java.util.List;
 import java.util.Optional;
 
+import io.productdemo.demo.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.User;
-import io.productdemo.demo.seervices.repositores.UserRepository;
+import io.productdemo.demo.services.repositores.UserRepository;
 
 @Service
 public class UserService {
@@ -21,7 +22,7 @@ public class UserService {
 	
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	public User insert(User user) {
 		return repository.save(user);
