@@ -16,11 +16,10 @@ import io.productdemo.demo.services.repositores.OrderRepository;
 import io.productdemo.demo.services.repositores.ProductRepository;
 import io.productdemo.demo.services.repositores.UserRepository;
 
-/**
- * Classe de configuração de teste banco H2
- * @Configuration
- * @Profile("test")
-**/
+
+ //Classe de configuração de teste banco H2
+ @Configuration
+ @Profile("test")
 public class TestConfig implements CommandLineRunner {
 
 	@Autowired
