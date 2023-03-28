@@ -1,27 +1,19 @@
 package io.productdemo.demo.config;
 
-import java.time.Instant;
-import java.util.Arrays;
-
 import io.productdemo.demo.entities.*;
+import io.productdemo.demo.entities.enums.OrderStatus;
+import io.productdemo.demo.services.repositores.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import io.productdemo.demo.entities.enums.OrderStatus;
-import io.productdemo.demo.services.repositores.CategoryRepository;
-import io.productdemo.demo.services.repositores.OrderItemRepository;
-import io.productdemo.demo.services.repositores.OrderRepository;
-import io.productdemo.demo.services.repositores.ProductRepository;
-import io.productdemo.demo.services.repositores.UserRepository;
+import java.time.Instant;
+import java.util.Arrays;
 
-/**
- * Classe de configuração de teste banco H2
- * @Configuration
- * @Profile("test")
-**/
-public class TestConfig implements CommandLineRunner {
+@Configuration
+@Profile("dev")
+public class DevConfig implements CommandLineRunner {
 
 	@Autowired
 	private UserRepository userRepository;
