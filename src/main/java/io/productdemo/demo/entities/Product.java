@@ -16,6 +16,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "tb_product")
@@ -38,6 +40,7 @@ public class Product implements Serializable {
 	@JoinTable(name = "tb_product_category",
 	joinColumns = @JoinColumn(name = "product_id"),
 	inverseJoinColumns = @JoinColumn(name = "category_id"))
+	@Cascade({CascadeType.SAVE_UPDATE})
 	private Set<Category> categories = new HashSet<>();
 
 	@OneToMany(mappedBy = "id.product")
