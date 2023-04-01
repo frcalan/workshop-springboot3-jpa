@@ -12,7 +12,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.User;
-import io.productdemo.demo.services.repositores.UserRepository;
+import io.productdemo.demo.repositores.UserRepository;
 
 @Service
 public class UserService {

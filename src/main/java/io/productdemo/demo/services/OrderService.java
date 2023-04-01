@@ -1,12 +1,13 @@
 package io.productdemo.demo.services;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
+import io.productdemo.demo.entities.OrderItem;
 import io.productdemo.demo.entities.Payment;
 import io.productdemo.demo.entities.Product;
 import io.productdemo.demo.resources.exceptions.DatabaseException;
 import io.productdemo.demo.services.exceptions.ResourceNotFoundException;
+import io.productdemo.demo.repositores.OrderItemRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -14,13 +15,15 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.Order;
-import io.productdemo.demo.services.repositores.OrderRepository;
+import io.productdemo.demo.repositores.OrderRepository;
 
 @Service
 public class OrderService {
 	
 	@Autowired
 	private OrderRepository repository;
+	@Autowired
+	private OrderItemRepository orderItemRepository;
 	
 	public List<Order> findAll() {
 		return repository.findAll();
@@ -29,9 +32,6 @@ public class OrderService {
 	public Order findById(Long id) {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();
-	}
-	public Order insert(Order order) {
-		return repository.save(order);
 	}
 
 	public void delete(Long id) {
@@ -54,6 +54,7 @@ public class OrderService {
 			throw new ResourceNotFoundException(id);
 		}
 	}
+
 	private void updateDataStatus(Order entity, Order order) {
 		entity.setOrderStatus(order.getOrderStatus());
 	}
@@ -68,7 +69,6 @@ public class OrderService {
 	}
 
 	private void updateDataPayment(Order entity, Order order) {
-
 		entity.setMoment(order.getMoment());
 		entity.setOrderStatus(order.getOrderStatus());
 		Payment pay = new Payment();
@@ -77,8 +77,14 @@ public class OrderService {
 		pay.setOrder(order);
 		entity.setPayment(pay);
 	}
+
+	private void saveDataOrder(Order entity, Order order, OrderItem items, Product produtos) {
+		entity.setClient(order.getClient());
+		entity.setOrderStatus(order.getOrderStatus());
+		entity.setMoment(order.getMoment());
+
+		items.setOrder(order);
+		items.setProduct(produtos);
+	}
 }
 
-/*		Payment pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), o1);
-		o1.setPayment(pay1);
-		orderRepository.save(o1);*/

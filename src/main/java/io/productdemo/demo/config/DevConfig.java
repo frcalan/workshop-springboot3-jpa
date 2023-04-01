@@ -2,7 +2,7 @@ package io.productdemo.demo.config;
 
 import io.productdemo.demo.entities.*;
 import io.productdemo.demo.entities.enums.OrderStatus;
-import io.productdemo.demo.services.repositores.*;
+import io.productdemo.demo.repositores.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;

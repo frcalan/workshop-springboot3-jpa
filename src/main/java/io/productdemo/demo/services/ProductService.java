@@ -3,8 +3,6 @@ package io.productdemo.demo.services;
 import java.util.List;
 import java.util.Optional;
 
-import io.productdemo.demo.entities.Category;
-import io.productdemo.demo.entities.User;
 import io.productdemo.demo.resources.exceptions.DatabaseException;
 import io.productdemo.demo.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
@@ -14,7 +12,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.Product;
-import io.productdemo.demo.services.repositores.ProductRepository;
+import io.productdemo.demo.repositores.ProductRepository;
 
 @Service
 public class ProductService {

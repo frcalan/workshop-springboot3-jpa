@@ -1,7 +1,9 @@
 package io.productdemo.demo.resources;
 
+import java.net.URI;
 import java.util.List;
 
+import io.productdemo.demo.entities.OrderItem;
 import io.productdemo.demo.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import io.productdemo.demo.entities.Order;
 import io.productdemo.demo.services.OrderService;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping(value = "/orders")

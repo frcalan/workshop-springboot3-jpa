@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import io.productdemo.demo.entities.enums.OrderStatus;
-import io.productdemo.demo.services.repositores.CategoryRepository;
-import io.productdemo.demo.services.repositores.OrderItemRepository;
-import io.productdemo.demo.services.repositores.OrderRepository;
-import io.productdemo.demo.services.repositores.ProductRepository;
-import io.productdemo.demo.services.repositores.UserRepository;
+import io.productdemo.demo.repositores.CategoryRepository;
+import io.productdemo.demo.repositores.OrderItemRepository;
+import io.productdemo.demo.repositores.OrderRepository;
+import io.productdemo.demo.repositores.ProductRepository;
+import io.productdemo.demo.repositores.UserRepository;
 
 
  //Classe de configuração de teste banco H2

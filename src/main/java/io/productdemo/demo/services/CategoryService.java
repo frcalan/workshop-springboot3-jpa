@@ -9,10 +9,9 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import io.productdemo.demo.entities.Category;
-import io.productdemo.demo.entities.User;
 import io.productdemo.demo.resources.exceptions.DatabaseException;
 import io.productdemo.demo.services.exceptions.ResourceNotFoundException;
-import io.productdemo.demo.services.repositores.CategoryRepository;
+import io.productdemo.demo.repositores.CategoryRepository;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
